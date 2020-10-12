@@ -1,0 +1,28 @@
+﻿<Window x:Class="WPF_Styles__Triggers.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Styles__Triggers"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" Text="Hello There" HorizontalAlignment="Center"/>
+        <CheckBox  x:Name="chkBtn" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                   Background="{Binding ElementName=chkBtn, Path=Background}"
+                   Text="{Binding ElementName=chkBtn, Path=Content}"/>
+
+        <TextBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Animation" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+    </Grid>
+</Window>
